@@ -1,0 +1,3130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Creatives 254 | Creative Agency Nairobi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Theme */
+        :root {
+            --primary: #0D0D0D;
+            --accent: #F5A623;
+            --secondary: #FFFFFF;
+            --highlight: #FF4C29;
+            --text-gray: #BDBDBD;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--highlight);
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--secondary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--secondary);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(245, 166, 35, 0.1);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat .count {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(245, 166, 35, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon i {
+            color: var(--secondary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+        .why-choose-us .section-title h2::after {
+            background-color: var(--highlight);
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .why-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: var(--text-gray);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--secondary);
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid var(--text-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .portfolio-img {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(13, 13, 13, 0.7), rgba(245, 166, 35, 0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 20px;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay p {
+            color: var(--secondary);
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay h3,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-content {
+            background-color: var(--secondary);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            text-align: center;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--text-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Blog Section */
+        .blog {
+            background-color: var(--secondary);
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .blog-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+        }
+
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+
+        .blog-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .blog-content p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .blog-link {
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .blog-link i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .blog-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: var(--secondary);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+
+        .cta .btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(245, 166, 35, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 80px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-col p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Page Content */
+        .page-content {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--highlight);
+            color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Merchandise Page Styles */
+        .merchandise {
+            background-color: var(--secondary);
+        }
+
+        .merch-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .merch-category-btn {
+            padding: 10px 25px;
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .merch-category-btn.active,
+        .merch-category-btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .merch-item {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .merch-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .merch-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .merch-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .merch-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .merch-item:hover .merch-img img {
+            transform: scale(1.05);
+        }
+
+        .merch-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--highlight);
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .merch-content {
+            padding: 20px;
+        }
+
+        .merch-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .merch-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-gray);
+            text-decoration: line-through;
+        }
+
+        .merch-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(245, 166, 35, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--accent);
+            color: var(--secondary);
+        }
+
+        .quantity {
+            font-weight: 600;
+        }
+
+        .add-to-cart {
+            background-color: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--highlight);
+            color: var(--secondary);
+        }
+
+        .cart-summary {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .cart-item-price {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .remove-item {
+            color: var(--highlight);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Enhanced Contact Form Styles */
+        .contact-form {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent), var(--highlight));
+        }
+
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            background-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+        }
+
+        .form-group i {
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus + i,
+        .form-group select:focus + i,
+        .form-group textarea:focus + i {
+            color: var(--accent);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(245, 166, 35, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .merch-actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .quantity-selector {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" data-page="home">
+                <i class="fas fa-palette"></i>
+                Urban <span>Creatives</span> 254
+            </a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" data-page="home" class="active">Home</a></li>
+                    <li><a href="#" data-page="about">About Us</a></li>
+                    <li><a href="#" data-page="services">Services</a></li>
+                    <li><a href="#" data-page="portfolio">Portfolio</a></li>
+                    <li><a href="#" data-page="blog">Blog</a></li>
+                    <li><a href="#" data-page="music">Music Production</a></li>
+                    <li><a href="#" data-page="merchandise">Merchandise</a></li>
+                    <li><a href="#" data-page="contact">Contact</a></li>
+                    <li><a href="#" data-page="careers">Careers</a></li>
+                    <li><a href="#" data-page="quote" class="btn btn-primary">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Creative. Bold. Limitless.</h1>
+                    <p>Marketing • Advertising • Web Development • Music Production</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn btn-primary" data-page="quote">Start Your Project</a>
+                        <a href="#" class="btn btn-secondary" data-page="portfolio">Explore Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Us</h2>
+                    <p>We are a Nairobi-based creative agency pushing boundaries in marketing, design, and sound.</p>
+                </div>
+                <div class="about-container">
+                    <div class="about-content">
+                        <h3>We Create Experiences That Connect Brands With People</h3>
+                        <p>Urban Creatives 254 is a full-service creative agency based in Nairobi, Kenya. We specialize in creating compelling brand experiences that resonate with audiences and drive results.</p>
+                        <p>Our team of passionate creatives, strategists, and technologists work together to deliver innovative solutions across marketing, advertising, web development, and music production.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <div class="count" data-count="5">0</div>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat">
+                                <div class="count" data-count="120">0</div>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="stat">
+                                <div class="count" data-count="300">0</div>
+                                <p>Projects Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Urban Creatives Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>We offer a comprehensive range of creative services to help your brand stand out.</p>
+                </div>
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Marketing & Strategy</h3>
+                        <p>Data-driven marketing strategies that connect your brand with the right audience and drive measurable results.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <h3>Digital Advertising</h3>
+                        <p>Targeted digital campaigns across social media, search engines, and programmatic platforms to maximize ROI.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Website Development</h3>
+                        <p>Responsive, user-friendly websites and web applications that deliver exceptional digital experiences.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Creative Branding</h3>
+                        <p>Comprehensive branding solutions including logo design, visual identity, and brand guidelines.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Music Production</h3>
+                        <p>Professional audio production, sound design, and music composition for brands and artists.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Production</h3>
+                        <p>Engaging video content from concept to final delivery, including commercials, corporate videos, and social content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Urban Creatives</h2>
+                    <p>We combine creativity with strategy to deliver exceptional results for our clients.</p>
+                </div>
+                <div class="why-container">
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>120+ Happy Clients</h3>
+                        <p>We've helped businesses across Kenya and beyond achieve their marketing goals.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>300+ Projects Completed</h3>
+                        <p>From small business websites to large-scale marketing campaigns.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>15+ Creative Experts</h3>
+                        <p>A multidisciplinary team of strategists, designers, developers, and producers.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>5-Star Client Feedback</h3>
+                        <p>We pride ourselves on delivering exceptional service and results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Portfolio</h2>
+                    <p>Explore some of our recent work across different industries and services.</p>
+                </div>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                    <button class="filter-btn" data-filter="music">Music</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Website">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Nairobi Fashion Hub</h3>
+                            <p>E-commerce website for a local fashion brand</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brand Identity">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Safari Coffee Co.</h3>
+                            <p>Complete brand identity and packaging design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="marketing">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital Marketing">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Maisha Insurance</h3>
+                            <p>Digital marketing campaign across social media</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="music">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Production">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Nairobi Nights Album</h3>
+                            <p>Music production and sound engineering</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Application">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Tech Solutions Kenya</h3>
+                            <p>Custom web application for project management</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-img">
+                            <img src="https://images.unsplash.com/photo-1565689228866-1d7afc55aabd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Logo Design">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Jikoni Express</h3>
+                            <p>Logo design and visual identity for food delivery service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Our Clients Say</h2>
+                    <p>Hear from some of the businesses we've helped grow and succeed.</p>
+                </div>
+                <div class="testimonials-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-track">
+                            <div class="testimonial-slide">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Urban Creatives transformed our online presence completely. Our website traffic increased by 200% and our conversion rate tripled within three months of working with them."</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-img">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>Sarah Johnson</h4>
+                                            <p>CEO, Nairobi Fashion Hub</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The branding work Urban Creatives did for our coffee company was exceptional. They captured the essence of Kenyan coffee culture perfectly and our sales have increased significantly."</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-img">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Kimani">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>David Kimani</h4>
+                                            <p>Founder, Safari Coffee Co.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Their music production team is incredibly talented. They understood our vision and delivered a sound that perfectly represents our brand. We couldn't be happier with the results."</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-img">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Grace Wanjiku">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4>Grace Wanjiku</h4>
+                                            <p>Artist Manager, Nairobi Nights</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-slide="0"></div>
+                        <div class="testimonial-dot" data-slide="1"></div>
+                        <div class="testimonial-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Creative Insights</h2>
+                    <p>Stay updated with the latest trends in marketing, design, and technology.</p>
+                </div>
+                <div class="blog-container">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Marketing Trends">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 15, 2023</span>
+                                <span><i class="far fa-folder"></i> Marketing</span>
+                            </div>
+                            <h3>5 Digital Marketing Trends Dominating 2023</h3>
+                            <p>Explore the key digital marketing trends that are shaping consumer behavior and driving business growth this year.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Design">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> April 28, 2023</span>
+                                <span><i class="far fa-folder"></i> Web Design</span>
+                            </div>
+                            <h3>The Evolution of User Experience in Web Design</h3>
+                            <p>How UX design has transformed from simple usability to creating meaningful emotional connections with users.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Production">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> April 12, 2023</span>
+                                <span><i class="far fa-folder"></i> Music Production</span>
+                            </div>
+                            <h3>Kenyan Music Goes Global: Production Techniques</h3>
+                            <p>How Kenyan artists are leveraging modern production techniques to create music with international appeal.</p>
+                            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Let's Build Your Brand Together</h2>
+                <p>Ready to take your business to the next level? Get in touch with our team today to discuss your project.</p>
+                <a href="#" class="btn btn-primary" data-page="quote">Get a Free Quote</a>
+            </div>
+        </section>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Urban Creatives 254</h2>
+                <p>Learn more about our story, mission, and the team behind our creative work.</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2018 in Nairobi, Kenya, Urban Creatives 254 began as a small collective of designers, developers, and marketers with a shared vision: to help Kenyan businesses thrive in the digital age through innovative creative solutions.</p>
+                    <p>What started as a passion project has grown into a full-service creative agency serving clients across East Africa and beyond. Our team has expanded to include specialists in branding, digital marketing, web development, and music production.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To empower businesses and brands with creative solutions that drive growth, foster connections, and make a lasting impact. We believe in the power of creativity to transform businesses and communities.</p>
+                    
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Innovation:</strong> We stay ahead of trends and embrace new technologies.</li>
+                        <li><strong>Collaboration:</strong> We work closely with our clients as partners.</li>
+                        <li><strong>Excellence:</strong> We strive for the highest quality in everything we do.</li>
+                        <li><strong>Community:</strong> We're committed to supporting the growth of Kenyan creative talent.</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Our Team">
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Meet Our Team</h2>
+                <p>The creative minds behind Urban Creatives 254</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>James Mwangi</h3>
+                    <p>Creative Director</p>
+                    <p>With over 10 years in the creative industry, James leads our vision and creative strategy.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Sarah Kamau</h3>
+                    <p>Lead Developer</p>
+                    <p>Sarah specializes in creating responsive, user-friendly websites and applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>David Ochieng</h3>
+                    <p>Senior Designer</p>
+                    <p>David brings brands to life through compelling visual identities and designs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Grace Achieng</h3>
+                    <p>Music Producer</p>
+                    <p>Grace oversees our music production division with her extensive audio engineering background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive creative solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing & Strategy</h3>
+                    <p>We develop data-driven marketing strategies that connect your brand with the right audience and drive measurable results. Our approach combines market research, consumer insights, and creative thinking to build campaigns that deliver ROI.</p>
+                    <ul>
+                        <li>Market Research & Analysis</li>
+                        <li>Brand Strategy Development</li>
+                        <li>Content Marketing</li>
+                        <li>Social Media Strategy</li>
+                        <li>Marketing Automation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Digital Advertising</h3>
+                    <p>Our targeted digital campaigns across social media, search engines, and programmatic platforms maximize your advertising ROI. We create compelling ad creatives and optimize campaigns based on performance data.</p>
+                    <ul>
+                        <li>Social Media Advertising</li>
+                        <li>Search Engine Marketing (SEM)</li>
+                        <li>Programmatic Display Ads</li>
+                        <li>Video Advertising</li>
+                        <li>Retargeting Campaigns</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>We build responsive, user-friendly websites and web applications that deliver exceptional digital experiences. Our development process focuses on performance, accessibility, and conversion optimization.</p>
+                    <ul>
+                        <li>Custom Website Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Web Applications</li>
+                        <li>CMS Development</li>
+                        <li>Website Maintenance</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Creative Branding</h3>
+                    <p>We create comprehensive branding solutions that tell your unique story and connect with your target audience. From logo design to complete visual identity systems, we ensure your brand stands out.</p>
+                    <ul>
+                        <li>Logo & Identity Design</li>
+                        <li>Brand Guidelines</li>
+                        <li>Packaging Design</li>
+                        <li>Print Collateral</li>
+                        <li>Environmental Branding</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Music Production</h3>
+                    <p>Our professional audio production, sound design, and music composition services help brands and artists create impactful sonic identities. We work in our state-of-the-art studio in Nairobi.</p>
+                    <ul>
+                        <li>Music Composition & Production</li>
+                        <li>Sound Design</li>
+                        <li>Audio Branding</li>
+                        <li>Podcast Production</li>
+                        <li>Voiceover Recording</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Production</h3>
+                    <p>We create engaging video content from concept to final delivery, including commercials, corporate videos, and social content. Our full-service production team handles everything from scripting to post-production.</p>
+                    <ul>
+                        <li>Commercial Video Production</li>
+                        <li>Corporate Videos</li>
+                        <li>Social Media Videos</li>
+                        <li>Animation & Motion Graphics</li>
+                        <li>Video Marketing Strategy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Our Process</h2>
+                <p>How we work with clients to deliver exceptional results</p>
+            </div>
+            
+            <div class="why-container">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Discovery</h3>
+                    <p>We begin by understanding your business, goals, and audience through in-depth research and workshops.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Strategy</h3>
+                    <p>We develop a customized strategy and creative concept tailored to your specific needs and objectives.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Execution</h3>
+                    <p>Our team brings the strategy to life through expert design, development, and production.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Launch & Optimize</h3>
+                    <p>We launch your project and continuously monitor performance to optimize for the best results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Page -->
+    <section id="portfolio" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Explore our recent work across different industries and services</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="music">Music</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Website">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Nairobi Fashion Hub</h3>
+                        <p>E-commerce website for a local fashion brand</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brand Identity">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Safari Coffee Co.</h3>
+                        <p>Complete brand identity and packaging design</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital Marketing">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Maisha Insurance</h3>
+                        <p>Digital marketing campaign across social media</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="music">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Production">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Nairobi Nights Album</h3>
+                        <p>Music production and sound engineering</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Application">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Tech Solutions Kenya</h3>
+                        <p>Custom web application for project management</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1565689228866-1d7afc55aabd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Logo Design">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Jikoni Express</h3>
+                        <p>Logo design and visual identity for food delivery service</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="video">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Video Production">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Kenya Tourism Board</h3>
+                        <p>Tourism promotional video series</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c88ac5c4c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Social Media Campaign">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Uber Kenya Launch</h3>
+                        <p>Social media marketing campaign</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Page -->
+    <section id="blog" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Creative Insights</h2>
+                <p>Stay updated with the latest trends in marketing, design, and technology</p>
+            </div>
+            
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Marketing Trends">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 15, 2023</span>
+                            <span><i class="far fa-folder"></i> Marketing</span>
+                        </div>
+                        <h3>5 Digital Marketing Trends Dominating 2023</h3>
+                        <p>Explore the key digital marketing trends that are shaping consumer behavior and driving business growth this year.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Design">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 28, 2023</span>
+                            <span><i class="far fa-folder"></i> Web Design</span>
+                        </div>
+                        <h3>The Evolution of User Experience in Web Design</h3>
+                        <p>How UX design has transformed from simple usability to creating meaningful emotional connections with users.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Production">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 12, 2023</span>
+                            <span><i class="far fa-folder"></i> Music Production</span>
+                        </div>
+                        <h3>Kenyan Music Goes Global: Production Techniques</h3>
+                        <p>How Kenyan artists are leveraging modern production techniques to create music with international appeal.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brand Strategy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 30, 2023</span>
+                            <span><i class="far fa-folder"></i> Branding</span>
+                        </div>
+                        <h3>Building Authentic Brands in the Digital Age</h3>
+                        <p>Why authenticity matters more than ever and how to build a brand that resonates with modern consumers.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Video Marketing">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 18, 2023</span>
+                            <span><i class="far fa-folder"></i> Video</span>
+                        </div>
+                        <h3>Why Video Content is Essential for Modern Marketing</h3>
+                        <p>Exploring the power of video in capturing attention and driving engagement in today's crowded digital landscape.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Data Analytics">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 5, 2023</span>
+                            <span><i class="far fa-folder"></i> Analytics</span>
+                        </div>
+                        <h3>Leveraging Data to Drive Creative Decisions</h3>
+                        <p>How data analytics is transforming the creative process and helping agencies deliver more effective campaigns.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Industry Awards</h2>
+                <p>Recognition for our creative work and innovation</p>
+            </div>
+            
+            <div class="why-container">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>2023 Kenya Digital Awards</h3>
+                    <p>Best Digital Campaign - Maisha Insurance</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>2022 East African Creative Awards</h3>
+                    <p>Excellence in Brand Identity - Safari Coffee Co.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>2022 Nairobi Design Festival</h3>
+                    <p>Innovation in Web Design - Nairobi Fashion Hub</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>2021 Kenya Marketing Excellence</h3>
+                    <p>Best Use of Social Media - Uber Kenya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Production Page -->
+    <section id="music" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Music Production</h2>
+                <p>Professional audio production, sound design, and music composition services</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Our Music Production Services</h3>
+                    <p>At Urban Creatives 254, we believe in the power of sound to transform brands and connect with audiences on an emotional level. Our state-of-the-art recording studio in Nairobi is equipped with the latest technology and staffed by experienced producers and sound engineers.</p>
+                    <p>We work with artists, brands, and content creators to develop unique sonic identities that capture attention and create lasting impressions.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="count" data-count="50">0</div>
+                            <p>Albums Produced</p>
+                        </div>
+                        <div class="stat">
+                            <div class="count" data-count="200">0</div>
+                            <p>Commercial Jingles</p>
+                        </div>
+                        <div class="stat">
+                            <div class="count" data-count="100">0</div>
+                            <p>Podcast Episodes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Music Studio">
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Our Music Services</h2>
+                <p>Comprehensive audio solutions for artists and brands</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-record-vinyl"></i>
+                    </div>
+                    <h3>Music Production</h3>
+                    <p>Full-service music production for artists, from recording to mixing and mastering. We work across all genres with a focus on bringing your creative vision to life.</p>
+                    <ul>
+                        <li>Recording & Tracking</li>
+                        <li>Mixing & Mastering</li>
+                        <li>Vocal Production</li>
+                        <li>Instrument Arrangement</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Sound Design</h3>
+                    <p>Custom sound design for films, commercials, video games, and interactive media. We create immersive audio experiences that enhance visual content.</p>
+                    <ul>
+                        <li>Foley & Sound Effects</li>
+                        <li>Ambient Soundscapes</li>
+                        <li>UI Sound Design</li>
+                        <li>Audio Post-Production</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Audio Branding</h3>
+                    <p>Develop a unique sonic identity for your brand with custom audio logos, brand music, and soundscapes that reinforce your visual identity.</p>
+                    <ul>
+                        <li>Audio Logo Creation</li>
+                        <li>Brand Music Composition</li>
+                        <li>Hold Music & IVR</li>
+                        <li>Sonic Strategy</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                    <h3>Podcast Production</h3>
+                    <p>End-to-end podcast production services including recording, editing, mixing, and distribution. We help you create professional-quality audio content.</p>
+                    <ul>
+                        <li>Recording & Editing</li>
+                        <li>Audio Enhancement</li>
+                        <li>Show Notes & Metadata</li>
+                        <li>Distribution Strategy</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Voiceover Recording</h3>
+                    <p>Professional voiceover recording for commercials, narrations, audiobooks, and corporate presentations. We work with talented voice artists.</p>
+                    <ul>
+                        <li>Voice Talent Casting</li>
+                        <li>Script Adaptation</li>
+                        <li>Recording & Direction</li>
+                        <li>Audio Post-Production</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Music Licensing</h3>
+                    <p>Access our library of original music for your projects, or commission custom compositions for films, advertisements, and digital content.</p>
+                    <ul>
+                        <li>Music Library Access</li>
+                        <li>Custom Composition</li>
+                        <li>Sync Licensing</li>
+                        <li>Rights Management</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Featured Music Projects</h2>
+                <p>Listen to some of our recent work</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nairobi Nights Album">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Nairobi Nights Album</h3>
+                        <p>Full album production for emerging Afro-fusion artist</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Listen Now</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1571974599782-87624638275f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Safari Coffee Jingle">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Safari Coffee Jingle</h3>
+                        <p>Audio branding and commercial jingle for coffee brand</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Listen Now</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Kenya Tourism Soundscape">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Kenya Tourism Soundscape</h3>
+                        <p>Immersive audio experience for tourism campaign</p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 15px;">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Page -->
+    <section id="merchandise" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Urban Creatives Merchandise</h2>
+                <p>Show your support with our exclusive branded merchandise</p>
+            </div>
+            
+            <div class="merch-categories">
+                <button class="merch-category-btn active" data-category="all">All Products</button>
+                <button class="merch-category-btn" data-category="clothing">Clothing</button>
+                <button class="merch-category-btn" data-category="accessories">Accessories</button>
+                <button class="merch-category-btn" data-category="music">Music</button>
+            </div>
+            
+            <div class="merch-grid">
+                <div class="merch-item" data-category="clothing">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Urban Creatives T-Shirt">
+                        <span class="merch-badge">Bestseller</span>
+                    </div>
+                    <div class="merch-content">
+                        <h3>Urban Creatives Logo T-Shirt</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 1,200</span>
+                        </div>
+                        <p>Premium cotton t-shirt with our signature logo design. Available in multiple colors.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="merch-item" data-category="clothing">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Urban Creatives Hoodie">
+                    </div>
+                    <div class="merch-content">
+                        <h3>Urban Creatives Hoodie</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 2,500</span>
+                        </div>
+                        <p>Comfortable hoodie with embroidered logo. Perfect for Nairobi's cooler evenings.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="merch-item" data-category="accessories">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Urban Creatives Cap">
+                    </div>
+                    <div class="merch-content">
+                        <h3>Urban Creatives Cap</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 800</span>
+                        </div>
+                        <p>Adjustable cap with embroidered logo. Protect yourself from the Nairobi sun in style.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="merch-item" data-category="accessories">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1582142306909-195724d1a13e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Urban Creatives Tote Bag">
+                        <span class="merch-badge">New</span>
+                    </div>
+                    <div class="merch-content">
+                        <h3>Urban Creatives Tote Bag</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 1,000</span>
+                        </div>
+                        <p>Eco-friendly tote bag with screen-printed design. Perfect for carrying your creative tools.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="merch-item" data-category="music">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nairobi Nights Vinyl">
+                    </div>
+                    <div class="merch-content">
+                        <h3>Nairobi Nights Vinyl</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 1,800</span>
+                        </div>
+                        <p>Limited edition vinyl featuring music produced by Urban Creatives. Includes digital download.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="merch-item" data-category="accessories">
+                    <div class="merch-img">
+                        <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Urban Creatives Sticker Pack">
+                    </div>
+                    <div class="merch-content">
+                        <h3>Urban Creatives Sticker Pack</h3>
+                        <div class="merch-price">
+                            <span class="current-price">KES 300</span>
+                        </div>
+                        <p>Set of 10 high-quality vinyl stickers with various Urban Creatives designs.</p>
+                        <div class="merch-actions">
+                            <div class="quantity-selector">
+                                <span class="quantity-btn minus">-</span>
+                                <span class="quantity">1</span>
+                                <span class="quantity-btn plus">+</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h3>Your Cart</h3>
+                <div class="cart-items">
+                    <!-- Cart items will be added dynamically -->
+                    <p class="empty-cart-message">Your cart is empty</p>
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">KES 0</span>
+                </div>
+                <div class="checkout-btn">
+                    <button class="btn btn-primary">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team to discuss your project</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>We'd love to hear about your project and explore how we can help bring your ideas to life. Whether you're looking for marketing support, web development, or music production, our team is ready to assist.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>Westlands, Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+254 712 345 678</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>hello@urbancreatives254.co.ke</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <form id="contact-form" class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="marketing">Marketing & Strategy</option>
+                                <option value="advertising">Digital Advertising</option>
+                                <option value="web">Website Development</option>
+                                <option value="branding">Creative Branding</option>
+                                <option value="music">Music Production</option>
+                                <option value="video">Video Production</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Page -->
+    <section id="careers" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Careers at Urban Creatives</h2>
+                <p>Join our team of passionate creatives and innovators</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Why Work With Us?</h3>
+                    <p>At Urban Creatives 254, we're building more than just a creative agency - we're creating a community of talented individuals who are passionate about making a difference through creativity.</p>
+                    <p>We offer a collaborative, inclusive environment where your ideas are valued, and your growth is supported. Join us in shaping the future of creative services in Kenya and beyond.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="count" data-count="15">0</div>
+                            <p>Team Members</p>
+                        </div>
+                        <div class="stat">
+                            <div class="count" data-count="5">0</div>
+                            <p>Years in Business</p>
+                        </div>
+                        <div class="stat">
+                            <div class="count" data-count="4">0</div>
+                            <p>Departments</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Our Team">
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Current Openings</h2>
+                <p>Explore opportunities to join our team</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Senior Graphic Designer</h3>
+                    <p><strong>Location:</strong> Nairobi, Kenya</p>
+                    <p><strong>Type:</strong> Full-time</p>
+                    <p>We're looking for an experienced graphic designer to join our creative team. You'll be responsible for creating visual concepts that communicate ideas that inspire, inform, and captivate consumers.</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 15px;">Apply Now</a>
+                </div>
+                <div class="service-card">
+                    <h3>Frontend Developer</h3>
+                    <p><strong>Location:</strong> Nairobi, Kenya</p>
+                    <p><strong>Type:</strong> Full-time</p>
+                    <p>Join our development team to create responsive, user-friendly websites and applications. We're looking for someone with strong skills in HTML, CSS, JavaScript, and modern frameworks.</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 15px;">Apply Now</a>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Marketing Strategist</h3>
+                    <p><strong>Location:</strong> Nairobi, Kenya</p>
+                    <p><strong>Type:</strong> Full-time</p>
+                    <p>We're seeking a strategic thinker to develop and implement digital marketing campaigns for our clients. You'll be responsible for planning, executing, and optimizing digital strategies.</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 15px;">Apply Now</a>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 80px;">
+                <h2>Internship Program</h2>
+                <p>Kickstart your career in the creative industry</p>
+            </div>
+            
+            <div class="about-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>Our internship program offers students and recent graduates the opportunity to gain hands-on experience in a professional creative environment. Interns work alongside our team on real client projects and receive mentorship from industry professionals.</p>
+                <p>We offer internships in graphic design, web development, digital marketing, music production, and account management.</p>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">Apply for Internship</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get a Quote Page -->
+    <section id="quote" class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get a Quote</h2>
+                <p>Tell us about your project and we'll provide a customized quote</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>Let's Bring Your Idea to Life</h3>
+                    <p>We approach each project with fresh eyes and innovative thinking. Whether you need a new website, a marketing campaign, or music production, we'll work with you to understand your goals and deliver a solution that exceeds expectations.</p>
+                    <p>Fill out the form with details about your project, and our team will get back to you with a customized quote within 24 hours.</p>
+                    
+                    <div class="why-container" style="margin-top: 40px;">
+                        <div class="why-card">
+                            <div class="why-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Creative Strategy</h3>
+                            <p>We develop innovative solutions tailored to your specific needs</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Measurable Results</h3>
+                            <p>We focus on delivering outcomes that drive business growth</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <form id="quote-form" class="contact-form">
+                        <h3>Project Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quote-name">Your Name</label>
+                                <input type="text" id="quote-name" name="name" placeholder="Enter your name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="quote-email">Email Address</label>
+                                <input type="email" id="quote-email" name="email" placeholder="Enter your email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-company">Company Name</label>
+                            <input type="text" id="quote-company" name="company" placeholder="Your company name">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quote-service">Service Needed</label>
+                                <select id="quote-service" name="service" required>
+                                    <option value="">Select a Service</option>
+                                    <option value="marketing">Marketing & Strategy</option>
+                                    <option value="advertising">Digital Advertising</option>
+                                    <option value="web">Website Development</option>
+                                    <option value="branding">Creative Branding</option>
+                                    <option value="music">Music Production</option>
+                                    <option value="video">Video Production</option>
+                                    <option value="multiple">Multiple Services</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="quote-budget">Project Budget</label>
+                                <select id="quote-budget" name="budget" required>
+                                    <option value="">Select Budget Range</option>
+                                    <option value="under-50k">Under KES 50,000</option>
+                                    <option value="50k-100k">KES 50,000 - 100,000</option>
+                                    <option value="100k-250k">KES 100,000 - 250,000</option>
+                                    <option value="250k-500k">KES 250,000 - 500,000</option>
+                                    <option value="500k-plus">KES 500,000+</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-details">Project Details & Requirements</label>
+                            <textarea id="quote-details" name="details" placeholder="Tell us about your project..." rows="5" required></textarea>
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="quote-deadline">Project Deadline</label>
+                            <input type="date" id="quote-deadline" name="deadline">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Urban Creatives 254</h3>
+                    <p>We are a Nairobi-based creative agency pushing boundaries in marketing, design, and sound.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                        <li><a href="#" data-page="portfolio">Portfolio</a></li>
+                        <li><a href="#" data-page="blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Marketing & Strategy</a></li>
+                        <li><a href="#">Digital Advertising</a></li>
+                        <li><a href="#">Website Development</a></li>
+                        <li><a href="#">Creative Branding</a></li>
+                        <li><a href="#" data-page="music">Music Production</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone"></i> +254 712 345 678</li>
+                        <li><i class="fas fa-envelope"></i> hello@urbancreatives254.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Urban Creatives 254. All Rights Reserved. | <a href="#" data-page="privacy">Privacy Policy</a> | <a href="#" data-page="terms">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Page Navigation
+        document.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                
+                // Close mobile menu if open
+                document.querySelector('nav').classList.remove('active');
+                
+                // Hide all pages
+                document.querySelectorAll('.page-content').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Update active nav link
+                document.querySelectorAll('nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // Scroll Animations
+        function checkScroll() {
+            const elements = document.querySelectorAll('.about-content, .about-image, .service-card, .why-card, .portfolio-item, .blog-card, .merch-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+            
+            // Scroll to top button
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('active');
+            } else {
+                scrollButton.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Scroll to Top
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Portfolio Filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active filter button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, 50);
+                    } else {
+                        item.classList.remove('visible');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 500);
+                    }
+                });
+            });
+        });
+
+        // Merchandise Category Filtering
+        document.querySelectorAll('.merch-category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active category button
+                document.querySelectorAll('.merch-category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const merchItems = document.querySelectorAll('.merch-item');
+                
+                merchItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, 50);
+                    } else {
+                        item.classList.remove('visible');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 500);
+                    }
+                });
+            });
+        });
+
+        // Merchandise Quantity Selector
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const isPlus = this.classList.contains('plus');
+                const quantityElement = this.parentElement.querySelector('.quantity');
+                let quantity = parseInt(quantityElement.textContent);
+                
+                if (isPlus) {
+                    quantity++;
+                } else if (quantity > 1) {
+                    quantity--;
+                }
+                
+                quantityElement.textContent = quantity;
+            });
+        });
+
+        // Shopping Cart Functionality
+        let cart = [];
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const emptyCartMessage = document.querySelector('.empty-cart-message');
+        const totalAmountElement = document.querySelector('.total-amount');
+        
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const merchItem = this.closest('.merch-item');
+                const itemName = merchItem.querySelector('h3').textContent;
+                const itemPrice = parseInt(merchItem.querySelector('.current-price').textContent.replace('KES ', '').replace(',', ''));
+                const quantity = parseInt(merchItem.querySelector('.quantity').textContent);
+                
+                // Check if item already in cart
+                const existingItemIndex = cart.findIndex(item => item.name === itemName);
+                
+                if (existingItemIndex !== -1) {
+                    // Update quantity if item already in cart
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    // Add new item to cart
+                    cart.push({
+                        name: itemName,
+                        price: itemPrice,
+                        quantity: quantity,
+                        image: merchItem.querySelector('img').src
+                    });
+                }
+                
+                updateCartDisplay();
+                
+                // Show confirmation
+                alert(`${quantity} ${itemName} added to cart!`);
+                
+                // Reset quantity
+                merchItem.querySelector('.quantity').textContent = '1';
+            });
+        });
+        
+        function updateCartDisplay() {
+            // Clear cart display
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                // Show empty cart message
+                emptyCartMessage.style.display = 'block';
+                totalAmountElement.textContent = 'KES 0';
+            } else {
+                // Hide empty cart message
+                emptyCartMessage.style.display = 'none';
+                
+                // Calculate total
+                let total = 0;
+                
+                // Add each item to cart display
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'cart-item';
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-img">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="cart-item-details">
+                                <h4>${item.name}</h4>
+                                <p class="cart-item-price">KES ${item.price.toLocaleString()} x ${item.quantity}</p>
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <span class="cart-item-total">KES ${itemTotal.toLocaleString()}</span>
+                            <span class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></span>
+                        </div>
+                    `;
+                    
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                
+                // Update total
+                totalAmountElement.textContent = `KES ${total.toLocaleString()}`;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        cart.splice(index, 1);
+                        updateCartDisplay();
+                    });
+                });
+            }
+        }
+        
+        // Checkout button
+        document.querySelector('.checkout-btn button').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Thank you for your order! This is a demo store, so no actual transaction will occur.');
+                cart = [];
+                updateCartDisplay();
+            }
+        });
+
+        // Testimonial Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        const track = document.querySelector('.testimonial-track');
+        
+        function showSlide(n) {
+            if (n >= slides.length) {
+                currentSlide = 0;
+            } else if (n < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = n;
+            }
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Auto slide
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.count');
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / 100;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will provide a quote within 24 hours.');
+            this.reset();
+        });
+
+        // Initialize counters when about section is in view
+        const aboutSection = document.querySelector('.about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(aboutSection);
+                }
+            });
+        });
+
+        observer.observe(aboutSection);
+    </script>
+</body>
+</html>
